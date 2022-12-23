@@ -21,19 +21,23 @@ function generatePassword(){
 
 
 }
-
+// global variables
 var passwordLength = ''
 var pasLow = ("")
 var pasUpper = ("")
 var pasNum = ("")
 var pasSpec = ("")
+let fullyDone = []
+let generated = []
+var randomGenerate = []
+var randomPass = []
+var finishedRandomPass = []
 
-
-
+// ask user for password length
 function passwordSpecs(){ 
   var pasLength = prompt("Enter the number of characters you would like your password to be. Minimum 8 char, Max 128 char.")
   if (pasLength <8 || pasLength >128){
-    alert('Try again and use a real number')
+    alert('Try again and use number between 8 and 128')
     return;
   } else if (pasLength >=8 || pasLength <=128){
     passwordLength = pasLength
@@ -47,9 +51,7 @@ function passwordSpecs(){
   
 }
 
-let fullyDone = []
-let generated = []
-
+// prompts user for which characters to use
 function getfullyDone(){
   
   var pasLow = confirm("Do you want lowercase characters in your password?")
@@ -90,9 +92,7 @@ function getfullyDone(){
       console.log (fullyDone)
     }
 
-var randomGenerate = []
-var randomPass = []
-var finishedRandomPass = []
+// scrambles character array into user given password length
 function scramble() {
   for (let i = 0; i < (parseInt(passwordLength)); i++) {
      randomGenerate = fullyDone[Math.floor(Math.random() * fullyDone.length)];
@@ -101,13 +101,10 @@ function scramble() {
     finishedRandomPass.push(randomPass.join('') )
     return finishedRandomPass;
   }
-
+// displays finished password to box
   function display(){
     document.querySelector("#password").value = finishedRandomPass
     console.log(finishedRandomPass)
 
   }
-// usergen.generateBtn
-// min 8 char to max 128char
-// take input and create array of letter numbers and symbold according to input
-// take random symbols and form password
+
