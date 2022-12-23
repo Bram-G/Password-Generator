@@ -5,4 +5,4 @@ I used javascript to create prompts that let the user select what type of charac
 
 link to deployed URL: https://bram-g.github.io/Password-Generator/
 
-Screenshot: 
+Screenshot: ![screenshot](./assets/Images/Screenshot.jpg)
